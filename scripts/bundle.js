@@ -183,7 +183,7 @@ process.chdir = function (dir) {
 process.umask = function() { return 0; };
 
 },{}],3:[function(require,module,exports){
-var socket = require('socket.io-client')("http://localhost:4200");
+var socket = require('socket.io-client')('http://localhost:4200');
 var $ = require('jquery');
 
 socket.on('connect', function(data) {

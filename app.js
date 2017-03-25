@@ -4,8 +4,8 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 
-//Tell express to use node_modules directory as the web root
-app.use(express.static(__dirname + '/node_modules'));
+//Map /scripts to a static directory to hold our javascript files
+app.use('/scripts', express.static(__dirname + '/scripts'));
 //Route all calls to '/' (root) to return index.html
 app.get('/', function(req, res,next) {
   res.sendFile(__dirname + '/index.html');
